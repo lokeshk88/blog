@@ -1,10 +1,12 @@
-<%unless comment.arhived?%>
-<div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+<% unless comment.archived? %>
+
+<div>
   <p>
     <strong>Commenter:</strong>
     <%= comment.commenter %>
   </p>
 </div>
+
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
@@ -13,9 +15,6 @@
   <p>
     <%= link_to "Destroy Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </p>  
+
 <%end%>
 
-<div>
-  <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-</div>

@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+
   has_many :comments
 
   validates :title, presence: true
@@ -9,7 +10,7 @@ class Article < ApplicationRecord
   validates :status, inclusion: { in: VALID_STATUSES }
 
   def archived?
-    status == 'archived'
+    :status == 'archived'
   end
 end
 
