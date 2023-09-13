@@ -11,11 +11,10 @@ class CommentsController < ApplicationController
       @article = Article.find(params[:article_id])
       @comment = @article.comments.find(params[:id])
       @comment.destroy
-      redirect_to article_path(@article), status: :see_other
-    end
+      redirect_to article_path(@article)
   
     private
       def comment_params
-        params.require(:comment).permit(:commenter, :body, :status)
+        params.require(:comment).permit(:commenter, :body)
       end
 end

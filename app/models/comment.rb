@@ -1,5 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :article
-  validate_presense_of :body , message: "Comment field not be empty !!!"
+  validates :body , presence: { message: "must be given please" }
+
+  
   #Proc.new { | user, data |"#{data[:attribute]} is needed for all registrations!" } 
 end
