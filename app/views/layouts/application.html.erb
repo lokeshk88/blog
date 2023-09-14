@@ -12,7 +12,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+<body>
+  <ul>
+  <li><%= link_to "Home", new_article_path %></li>
+  <li><%= link_to "Login", new_article_path %></li>
+  <li><%= link_to "Sign up", new_article_path %></li>
+</ul>
   <nav>
     <% if user_signed_in? %>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
