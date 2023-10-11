@@ -5,29 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> <!-- Minified version 
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
-
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= turbo_include_tags%>
   </head>
-
-<body>
-  <ul>
-  <li><%= link_to "Home", new_article_path %></li>
-  <li><%= link_to "Login", new_article_path %></li>
-  <li><%= link_to "Sign up", new_article_path %></li>
-</ul>
-  <nav>
-    <% if user_signed_in? %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-      <%= link_to 'Sign In', new_user_session_path %>
-    <% end %>
-  </nav>    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body>
+      <%=render "shared/navbar"%>
+      <% if notice %>
+        <div class="w3-right-align"><p class="alert alert-success"><br><%= notice %></p></div>
+      <% end %>
+      <% if alert %>
+        <div class="w3-right-align"><p class="alert alert-danger"><%= alert %></p></div>
+      <% end %>
+      <%= yield %>
   </body>
 </html>

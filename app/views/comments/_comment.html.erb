@@ -1,16 +1,9 @@
-
 <div>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
-</div>
-<div>
-  <p>
-    <strong>Comment:</strong>
+  <pre>
+    <strong><%= comment.commenter%></strong> | <strong><%= time_tag comment.created_at, "data-local": "time-ago"%></strong>
     <%= comment.body %>
-  </p>
+  </pre>
+
+<%= link_to "Remove", [comment.article, comment],
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 </div>
-
-<%= link_to "Destroy Comment", [comment.article, comment], data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-

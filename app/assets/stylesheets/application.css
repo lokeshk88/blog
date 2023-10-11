@@ -1,0 +1,16 @@
+@import "./actiontext.scss";
+/* Custom container sizes */
+.w3-container-small {
+  width: 50%;
+  margin: 0 auto; /* Center the container */
+}
+
+.w3-container-medium {
+  width: 70%;
+  margin: 0 auto; /* Center the container */
+}
+
+.w3-container-large {
+  width: 90%;
+  margin: 0 auto; /* Center the container */
+}
