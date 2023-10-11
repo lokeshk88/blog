@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
       def index
         @articles = Article.all
+        @articles = Article.order(:title).page params[:page]
       end
 
       def show
