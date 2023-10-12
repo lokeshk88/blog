@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+user=User.where(email:"lokesh@gmail.com").first_or_initialize
+
+user.update(
+	password:"000000"
+	)
+dummy=["","","",""]
+
+50.times do |i|
+	Article.create title:"Article #{i}", content:"Write something here to user."
+end
